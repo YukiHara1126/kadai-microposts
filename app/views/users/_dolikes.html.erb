@@ -1,0 +1,18 @@
+<% if dolikes.any? %>
+    <ul class="media-list">
+      <% dolikes.each do |dolike| %>
+      <li class="media">
+        <div class="media-body">
+          <div>
+            <%= dolike.user.name %>
+          </div>
+          <div>
+            <%= dolike.content %>
+          </div>  
+         <%= render 'likes/likes_button', micropost: dolike %>
+        </div>  
+      </li>  
+      <% end %>
+    </ul>  
+    <%= paginate dolikes %>
+  <% end %>

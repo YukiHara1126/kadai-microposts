@@ -33,7 +33,7 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
-  def feed_microposts
+    def feed_microposts
     Micropost.where(user_id: self.following_ids + [self.id])
   end
   
@@ -47,6 +47,5 @@ class User < ApplicationRecord
   end
   
   def like?(micropost)
-    self.dolikes.include?(micropost)
   end
 end
